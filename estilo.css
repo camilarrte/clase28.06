@@ -1,0 +1,79 @@
+.contenedor {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "area1 area1 area3"
+                        "area2 area2 area3" 
+                        "area2 area2 area3" 
+                        "area4 area4 area4 ";
+    gap: 32px;
+}
+
+img{
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+.contenedor:has(#menu:checked){
+  grid-template-rows: 120px repeat(3);
+}
+
+input#menu{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.grilla{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grilla img{
+  width: 100%;
+  height: 50%;
+}
+
+
+
+.ele1 {
+  background-color: aqua;
+  grid-area: area1;
+}
+
+.ele2 {
+  background-color: rgb(112, 112, 112);
+  grid-area: area2;
+}
+
+.ele3 {
+  background-color: blue;
+  grid-area: area3;
+}
+
+.ele4 {
+  background-color: blueviolet;
+  grid-area: area4;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+
+@media screen and (max-width:768px){
+  .contenedor{
+    grid-template-areas: 
+    "area1 area1 area1"
+    "area2 area2 area2"
+    "area3 area3 area3"
+    "area4 area4 area4";
+    gap: 0px; 
+  }
+}
+
+
